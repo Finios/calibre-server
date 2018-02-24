@@ -13,6 +13,13 @@ VOLUME ["/calibre-lib"]
 EXPOSE 8080
 ENV PREFIX /
 ENV LIBRARY /calibre-lib
-ENV AUTH enable-auth
+ENV AUTH disable-auth
+ENV BANAFTER 5
+ENV BANFOR 30
+ENV SENDFILE enable
+ENV AJAXTIMEOUT 60
+ENV TIMEOUT 120
+ENV NUMPERPAGE 50
+ENV MAXOPDS 30
 
-CMD /opt/calibre/calibre-server --url-prefix=$PREFIX  --userdb /users.sqlite --$AUTH --port=8080 $LIBRARY 
+CMD /opt/calibre/calibre-server --auto-reload --ban-after=$BANAFTER --ban-for=$BANFOR --$ENDFILE-use-sendfile --ajax-timeout=$AJAXTIMEOUT --timeout=$TIMEOUT --num-per-page=$NUMPERPAGE --max-opds-items=$MAXOPDS --url-prefix=$PREFIX --userdb /users.sqlite --$AUTH --port=8080 $LIBRARY 
