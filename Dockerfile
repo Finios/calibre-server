@@ -13,5 +13,6 @@ VOLUME ["/calibre-lib"]
 EXPOSE 8080
 ENV PREFIX /
 ENV LIBRARY /calibre-lib
+ENV AUTH enable-auth
 
-CMD /opt/calibre/calibre-server --url-prefix=$PREFIX  --userdb /users.sqlite --enable-auth --port=8080 "$LIBRARY" 
+CMD /opt/calibre/calibre-server --url-prefix=$PREFIX  --userdb /users.sqlite --$AUTH --port=8080 "$LIBRARY" 
