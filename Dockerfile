@@ -8,6 +8,7 @@ RUN rm /tmp/calibre* -Rf 2>&1 >/dev/null && wget -nv -O- https://download.calibr
 WORKDIR /opt/calibre
 
 RUN mkdir -p /calibre-lib
+COPY server-users.sqlite /users.sqlite
 
 VOLUME ["/calibre-lib"]
 EXPOSE 8080
