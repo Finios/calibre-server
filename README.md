@@ -2,7 +2,7 @@
 
 Docker build with Ubuntu 16.04 and Calibre.
 
-[EN] This container containes a calibre-server from [calibre.com](https://calibre-ebook.com), running one or multible libraries. You can add an user-authentication by enable the AUTH paramether (User:root PW:root). [DE] Dieser Container enthält den calibre-server von [calibre.com](https://calibre-ebook.com), welcher eine oder mehrere Calibre-Bibliotheken zur verfügung stellen kann. Du kannst die Nutzerauthentifizierung einschalten indem du den AUTH Parameter auf enable setzt (User:root PW:root).
+[EN] This container containes a calibre-server from [calibre.com](https://calibre-ebook.com), running one or multible libraries. You can add an user-authentication by enable the AUTH paramether (User:root PW:root). [DE] Dieser Container enthält den calibre-server von [calibre.com](https://calibre-ebook.com), welcher eine oder mehrere Calibre-Bibliotheken zur Verfügung stellen kann. Du kannst die Nutzerauthentifizierung einschalten indem du den AUTH Parameter auf enable setzt (User:root PW:root).
 
 - -v /path/to/calibre/library(s):/calibre-lib
 - -v /path/to/server-users.sqlite:/users.sqlite
