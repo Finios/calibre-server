@@ -43,3 +43,6 @@ __[EN] On which system had you tested it? [DE] Auf welchem System hast du es bis
 __[EN] Username and Password? [DE] Nutzername und Passwort?__
 User: root
 PW: root
+
+__[EN] Description of the Parameter [DE] Beschreibung der Parameter__
+[Calibre Manual](https://manual.calibre-ebook.com/generated/en/calibre-server.html)
