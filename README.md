@@ -3,10 +3,10 @@
 Docker build with Ubuntu 18.04 and Calibre.
 
 [EN] This container containes a calibre-server from [calibre-ebook.com](https://calibre-ebook.com), running one or multible libraries. You can add an user-authentication by enable the AUTH paramether (User: root PW: root). <br>
-[DE] Dieser Container enthält den calibre-server von [calibre-ebook.com](https://calibre-ebook.com), welcher eine oder mehrere Calibre-Bibliotheken zur Verfügung stellen kann. Du kannst die Nutzerauthentifizierung einschalten indem du den AUTH Parameter auf enable setzt (User: root PW: root).
+[DE] Dieser Container enthï¿½lt den calibre-server von [calibre-ebook.com](https://calibre-ebook.com), welcher eine oder mehrere Calibre-Bibliotheken zur Verfï¿½gung stellen kann. Du kannst die Nutzerauthentifizierung einschalten indem du den AUTH Parameter auf enable setzt (User: root PW: root).
 
 * -v /path/to/calibre/library(s):/calibre-lib
-* -v /path/to/config:/config
+* -v /path/to/config:/calibre-config
 * -e PREFIX=/calibre
 * -e LIBRARY=/calibre-lib | /calibre-lib/lib1 /calibre-lib/lib2
 * -e AUTH=enable-auth | disable-auth
@@ -22,7 +22,7 @@ Docker build with Ubuntu 18.04 and Calibre.
 * -e PORT 8080
 * -e OTHERPARAM <see [calibre-server options](https://manual.calibre-ebook.com/generated/en/calibre-server.html)>
 * -e CALIBRE_OVERRIDE_LANG=en
-* -e CALIBRE_CONFIG_DIRECTORY=/config/calibre
+* -e CALIBRE_CONFIG_DIRECTORY=/calibre-config/calibre
 
 ## Examples
 
@@ -51,7 +51,7 @@ services:
         - AUTH=enable-auth
       volumes:  
         - <path to library(s)>:/calibre-lib:rw
-        - <path to config>:/config:rw
+        - <path to config>:/calibre-config:rw
 ```
 
 ## FAQ:
@@ -64,8 +64,8 @@ But you can edit it from your host, if you have mounted the file. <br>
 
 __[EN] Where can I find the server-users.sqlite?[DE] Wo kann ich die server-users.sqlite finden?__
 
-[EN] The database is created in the folder ```/config/server-users.sqlite```, if you enable authentication (environment variable ```AUTH=enable-auth```). You can change the location and name by editing the environment variable ```USERDB``` (e.g. if ```USERDB=database/db.sqlite``` you can find it here: ```/config/database/db.sqlite```) <br>
-[DE] Die Datenbank wird unter ```/config/server-users.sqlite``` erzeugt, wenn die Variable ```AUTH=enable-auth``` gesetzt ist. Du kannst Speicherort und den Namen durch die Variable ```USERDB``` ändert (z.B. wenn ```USERDB=database/db.sqlite``` findest du sie hier: ```/config/database/db.sqlite```)
+[EN] The database is created in the folder ```/calibre-config/server-users.sqlite```, if you enable authentication (environment variable ```AUTH=enable-auth```). You can change the location and name by editing the environment variable ```USERDB``` (e.g. if ```USERDB=database/db.sqlite``` you can find it here: ```/calibre-config/database/db.sqlite```) <br>
+[DE] Die Datenbank wird unter ```/calibre-config/server-users.sqlite``` erzeugt, wenn die Variable ```AUTH=enable-auth``` gesetzt ist. Du kannst Speicherort und den Namen durch die Variable ```USERDB``` ï¿½ndert (z.B. wenn ```USERDB=database/db.sqlite``` findest du sie hier: ```/calibre-config/database/db.sqlite```)
 
 __[EN] On which system had you tested it? [DE] Auf welchem System hast du es bisher getestet?__
 
@@ -77,10 +77,10 @@ __[EN] Username and Password? [DE] Nutzername und Passwort?__
 Username: root <br>
 Password: root
 
-__[EN] Can I change the initial password? [DE] Kann ich das initiale Passwort ändern?__
+__[EN] Can I change the initial password? [DE] Kann ich das initiale Passwort ï¿½ndern?__
 
 [EN] On first run (with ```AUTH=enable-auth```) you can set the username and password using the variables ```AUTH_USER``` and ```AUTH_PASSWORD```. After that you can only change it via the web interface or directly via the database. <br>
-[DE] Beim ersten Starten (mit ```AUTH=enable-auth```), kannst du den Nutzernamen und das Passwort mit den Variablen ```AUTH_USER``` und ```AUTH_PASSWORD``` ändern. Danach kannst du es nur noch über die Weboberfläche oder die Datenbank direkt ändern.
+[DE] Beim ersten Starten (mit ```AUTH=enable-auth```), kannst du den Nutzernamen und das Passwort mit den Variablen ```AUTH_USER``` und ```AUTH_PASSWORD``` ï¿½ndern. Danach kannst du es nur noch ï¿½ber die Weboberflï¿½che oder die Datenbank direkt ï¿½ndern.
 
 __[EN] Description of the Environment variables [DE] Beschreibung der Variablen__
 

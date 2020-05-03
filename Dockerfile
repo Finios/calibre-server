@@ -32,14 +32,14 @@ WORKDIR /opt/calibre
 COPY * /
 
 RUN mkdir -p /calibre-lib && \
-    mkdir -p /config && \
+    mkdir -p /calibre-config && \
     chgrp -R 100 /calibre-lib && \
-    chgrp -R 100 /config && \
+    chgrp -R 100 /calibre-config && \
     chmod -R 755 /calibre-lib && \
-    chmod -R 755 /config && \
+    chmod -R 755 /calibre-config && \
     chmod 755 /docker-entrypoint.sh
 
-VOLUME ["/calibre-lib", "/config"]
+VOLUME ["/calibre-lib", "/calibre-config"]
 
 EXPOSE 8080
 
@@ -58,7 +58,7 @@ ENV PORT=8080 \
     MAXOPDS=30 \
     OTHERPARAM= \
     CALIBRE_OVERRIDE_LANG="en" \
-    CALIBRE_CONFIG_DIRECTORY="/config/calibre"
+    CALIBRE_CONFIG_DIRECTORY="/calibre-config/calibre"
 
 ENTRYPOINT /docker-entrypoint.sh
 CMD [""]
