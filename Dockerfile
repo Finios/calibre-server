@@ -21,7 +21,8 @@ RUN apt-get update && \
 		sqlite3 \
 		bash-completion && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/src/*
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/src/* && \
+    mkdir -p /usr/share/desktop-directories
 
 RUN wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin ${calibre_version} && \
     rm /tmp/calibre* -Rf 2>&1 >/dev/null
