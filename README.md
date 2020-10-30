@@ -91,6 +91,7 @@ __[EN] Description of the Environment variables [DE] Beschreibung der Variablen_
 
 * 30.20.2020:
   * update Dockerfile
+  * update docker-entrypoint.sh
 
 * 03.05.2020: 
   * rewrite/update Dockerfile
