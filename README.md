@@ -1,6 +1,6 @@
 # calibre-server
 
-Docker build with Ubuntu 18.04 and Calibre.
+Docker build with Ubuntu 20.04 and Calibre.
 
 [EN] This container containes a calibre-server from [calibre-ebook.com](https://calibre-ebook.com), running one or multible libraries. You can add an user-authentication by enable the AUTH paramether (User: root PW: root). <br>
 [DE] Dieser Container enthält den calibre-server von [calibre-ebook.com](https://calibre-ebook.com), welcher eine oder mehrere Calibre-Bibliotheken zur Verfügung stellen kann. Du kannst die Nutzerauthentifizierung einschalten indem du den AUTH Parameter auf enable setzt (User: root PW: root).
@@ -88,6 +88,9 @@ __[EN] Description of the Environment variables [DE] Beschreibung der Variablen_
 [Calibre Manual: Customizing calibre](https://manual.calibre-ebook.com/customize.html)
 
 ## Changes:
+
+* 30.20.2020:
+  * update Dockerfile
 
 * 03.05.2020: 
   * rewrite/update Dockerfile
