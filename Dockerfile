@@ -1,17 +1,19 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 # example 4.15.0: calibre_version="version=4.15.0"
 # example latest: calibre_version=""
 ARG calibre_version
-ENV calibre_version=$calibre_version
+ENV calibre_version=$calibre_version \
+    TZ=Europe/Berlin
 
 LABEL maintainer="finios" \
       description="calibre-server"
 
-RUN apt-get update && \
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
+    apt-get update && \
     apt-get -y install \
 		wget \
-		python \
+		python3 \
 		xz-utils \
 		imagemagick \
 		xdg-utils && \
@@ -19,6 +21,13 @@ RUN apt-get update && \
 		dbus \
 		libnss3 \
 		sqlite3 \
+		libxcb-icccm4 \
+		libxcb-image0 \
+		libxcb-keysyms1 \
+		libxcb-randr0 \
+		libxcb-render-util0 \
+		libxcb-xinerama0 \
+		python3-xdg \
 		bash-completion && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/src/* && \
