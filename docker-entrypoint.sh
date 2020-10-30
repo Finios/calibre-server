@@ -5,7 +5,7 @@ check_database() {
 	#check if userdatabase exist
 	if [ ! -f "/calibre-config/$USERDB" ]; then
 		# creating userdb
-		# /opt/calibre/calibre-server --userdb /config/$USERDB --manage-users
+		# /opt/calibre/calibre-server --userdb /calibre-config/$USERDB --manage-users
 		echo "Creating userdatabase"
 		sqlite3 -batch /calibre-config/$USERDB "CREATE TABLE if not exists users (
 				id INTEGER PRIMARY KEY,
