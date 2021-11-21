@@ -67,11 +67,6 @@ __[EN] Where can I find the server-users.sqlite?[DE] Wo kann ich die server-user
 [EN] The database is created in the folder ```/calibre-config/server-users.sqlite```, if you enable authentication (environment variable ```AUTH=enable-auth```). You can change the location and name by editing the environment variable ```USERDB``` (e.g. if ```USERDB=database/db.sqlite``` you can find it here: ```/calibre-config/database/db.sqlite```) <br>
 [DE] Die Datenbank wird unter ```/calibre-config/server-users.sqlite``` erzeugt, wenn die Variable ```AUTH=enable-auth``` gesetzt ist. Du kannst Speicherort und den Namen durch die Variable ```USERDB``` ändert (z.B. wenn ```USERDB=database/db.sqlite``` findest du sie hier: ```/calibre-config/database/db.sqlite```)
 
-__[EN] On which system had you tested it? [DE] Auf welchem System hast du es bisher getestet?__
-
-[EN] I tested it on Synology DSM 6.2.3 (Docker-Package: 18.09.0-0506). <br>
-[DE] Ich habe es auf einer Synology DSM 6.2.3 (Docker-Packet: 18.09.0-0506) getestet.
-
 __[EN] Username and Password? [DE] Nutzername und Passwort?__
 
 Username: root <br>
