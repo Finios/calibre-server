@@ -32,7 +32,7 @@ Example 1: Single Library and Prefix <br>
 ```docker run -d -p 8082:8080 -v /Calibre:/calibre-lib -e PREFIX=/calibre --name calibre-server finios/calibre-server```
 
 Example 2: Multiple Librarys <br>
-```docker run -d -p 8082:8080 -v /Calibre:/calibre-lib -e LIBRARY=/calibre-lib/test1 /calibre-lib/test2 --name calibre-server finios/calibre-server```
+```docker run -d -p 8082:8080 -v /Calibre:/calibre-lib -e LIBRARY='/calibre-lib/test1 /calibre-lib/test2' --name calibre-server finios/calibre-server```
 
 ### docker-compose
 
